@@ -62,8 +62,8 @@ To use this server with Claude Desktop, add the following configuration to your 
   "mcpServers": {
     "multi-tool-server": {
       "command": "python",
-      "args": ["C:/github/test-py/server.py"],
-      "cwd": "C:/github/test-py"
+      "args": ["C:/github/mcp-py/server.py"],
+      "cwd": "C:/github/mcp-py"
     }
   }
 }

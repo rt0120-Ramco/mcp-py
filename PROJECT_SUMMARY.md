@@ -3,7 +3,7 @@
 ## Project Structure
 
 ```
-c:\github\test-py\
+c:\github\mcp-py\
 ├── server.py                    # Main FastMCP server with 10 tools
 ├── requirements.txt             # Python dependencies
 ├── .env                        # Environment variables (template)

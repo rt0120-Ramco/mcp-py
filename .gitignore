@@ -173,3 +173,11 @@ Thumbs.db
 
 # MCP specific
 claude_desktop_config.json
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+package_dist/
+*.whl
+*.tar.gz

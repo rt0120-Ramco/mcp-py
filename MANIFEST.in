@@ -1,0 +1,35 @@
+# Include additional files in the package distribution
+include README.md
+include PROJECT_SUMMARY.md
+include requirements.txt
+include .env.example
+include *.bat
+include *.json
+
+# Include documentation files
+include docs/*
+recursive-include docs *.md *.txt *.rst
+
+# Include test files
+include test_server.py
+include demo.py
+
+# Include configuration templates
+include claude_desktop_config.json
+
+# Exclude unnecessary files
+exclude .gitignore
+exclude .env
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *.orig
+recursive-exclude * *.rej
+exclude .coverage
+exclude .pytest_cache
+recursive-exclude * .git*
+
+# Exclude build artifacts
+exclude build
+exclude dist
+exclude *.egg-info
+exclude package_dist

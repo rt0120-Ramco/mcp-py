@@ -19,6 +19,9 @@ if errorlevel 1 (
 echo Python found: 
 python --version
 
+REM Change to project root directory
+cd /d "%~dp0..\.."
+
 REM Check if we're in a virtual environment
 if defined VIRTUAL_ENV (
     echo Using virtual environment: %VIRTUAL_ENV%

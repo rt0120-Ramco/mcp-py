@@ -332,6 +332,13 @@ def main():
     print("=" * 50)
     print()
     
+    # Change to project root directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.join(script_dir, '..', '..')
+    os.chdir(project_root)
+    print(f"Working directory: {os.getcwd()}")
+    print()
+    
     # Configuration
     package_name = "FastMCP-Multi-Tool-Server"
     dist_dir = "package_dist"

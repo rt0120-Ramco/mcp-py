@@ -181,3 +181,8 @@ dist/
 package_dist/
 *.whl
 *.tar.gz
+
+# Script temporary files
+scripts/**/__pycache__/
+scripts/**/build/
+scripts/**/dist/

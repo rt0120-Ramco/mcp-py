@@ -28,6 +28,25 @@ This MCP server includes the following tools:
 
 ## Installation
 
+### Quick Setup
+
+**Windows:**
+```batch
+scripts\build.bat
+```
+
+**Linux/macOS:**
+```bash
+chmod +x scripts/build.sh && scripts/build.sh
+```
+
+**Cross-platform (Python):**
+```bash
+python scripts/build.py
+```
+
+### Manual Installation
+
 1. Install Python dependencies:
 ```bash
 pip install -r requirements.txt

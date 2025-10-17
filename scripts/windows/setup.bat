@@ -2,7 +2,19 @@
 echo FastMCP Multi-Tool Server Setup
 echo ================================
 
-cd /d "%~dp0"
+REM Try to find project root - check if we're in scripts/windows or project root
+if exist "requirements.txt" (
+    REM We're in project root or distribution package
+    set PROJECT_ROOT=%cd%
+) else if exist "..\..\requirements.txt" (
+    REM We're in scripts/windows subdirectory
+    cd /d "%~dp0..\.."
+    set PROJECT_ROOT=%cd%
+) else (
+    echo ERROR: Cannot find requirements.txt. Please run from project root or ensure requirements.txt exists.
+    pause
+    exit /b 1
+)
 
 REM Check if Python is installed
 python --version >nul 2>&1

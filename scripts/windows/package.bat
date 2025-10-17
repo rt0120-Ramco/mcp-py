@@ -7,6 +7,9 @@ echo FastMCP Multi-Tool Server Package Creator
 echo ==========================================
 echo.
 
+REM Change to project root directory
+cd /d "%~dp0..\.."
+
 REM Set variables
 set PACKAGE_NAME=FastMCP-Multi-Tool-Server
 set VERSION=1.0.0
@@ -18,7 +21,7 @@ if exist %DIST_DIR% rmdir /s /q %DIST_DIR%
 mkdir %DIST_DIR%
 
 echo Step 1: Building Python package...
-call build.bat
+call scripts\windows\build.bat
 if errorlevel 1 (
     echo ERROR: Build failed
     pause
@@ -37,8 +40,8 @@ copy README.md %DIST_DIR%\%PACKAGE_NAME%\
 copy PROJECT_SUMMARY.md %DIST_DIR%\%PACKAGE_NAME%\
 copy demo.py %DIST_DIR%\%PACKAGE_NAME%\
 copy test_server.py %DIST_DIR%\%PACKAGE_NAME%\
-copy setup.bat %DIST_DIR%\%PACKAGE_NAME%\
-copy start_server.bat %DIST_DIR%\%PACKAGE_NAME%\
+copy scripts\windows\setup.bat %DIST_DIR%\%PACKAGE_NAME%\
+copy scripts\windows\start_server.bat %DIST_DIR%\%PACKAGE_NAME%\
 
 REM Copy distribution files
 echo Copying built packages...

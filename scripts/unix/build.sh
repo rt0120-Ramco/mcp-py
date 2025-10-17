@@ -4,9 +4,14 @@
 
 set -e  # Exit on any error
 
+# Change to project root directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/../.."
+
 echo "========================================"
 echo "FastMCP Multi-Tool Server Build Script"
 echo "========================================"
+echo "Working directory: $(pwd)"
 echo
 
 # Check if Python is available

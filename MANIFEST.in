@@ -3,8 +3,11 @@ include README.md
 include PROJECT_SUMMARY.md
 include requirements.txt
 include .env.example
-include *.bat
 include *.json
+
+# Include build and packaging scripts
+recursive-include scripts *.bat *.sh *.py
+include scripts/README.md
 
 # Include documentation files
 include docs/*

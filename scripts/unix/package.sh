@@ -4,9 +4,14 @@
 
 set -e  # Exit on any error
 
+# Change to project root directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/../.."
+
 echo "=========================================="
 echo "FastMCP Multi-Tool Server Package Creator"
 echo "=========================================="
+echo "Working directory: $(pwd)"
 echo
 
 # Set variables
@@ -20,8 +25,8 @@ rm -rf "$DIST_DIR"
 mkdir -p "$DIST_DIR"
 
 echo "Step 1: Building Python package..."
-chmod +x build.sh
-./build.sh
+chmod +x scripts/unix/build.sh
+scripts/unix/build.sh
 if [[ $? -ne 0 ]]; then
     echo "ERROR: Build failed"
     exit 1
@@ -41,7 +46,7 @@ cp demo.py "$DIST_DIR/$PACKAGE_NAME/"
 cp test_server.py "$DIST_DIR/$PACKAGE_NAME/"
 
 # Copy Linux scripts
-cp build.sh "$DIST_DIR/$PACKAGE_NAME/"
+cp scripts/unix/build.sh "$DIST_DIR/$PACKAGE_NAME/"
 chmod +x "$DIST_DIR/$PACKAGE_NAME/build.sh"
 
 # Copy distribution files
